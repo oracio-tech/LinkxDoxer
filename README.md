@@ -21,7 +21,7 @@ LinkxDoxer is a Python script designed to efficiently retrieve all links found d
 1. **Installation:**
     - Clone this repository to your local machine.
     ```
-    git clone https://github.com/oracio-tech/DoxerX.git
+    git clone https://github.com/oracio-tech/LinkxDoxer.git
     ```
 2. **Prerequisites:**
     - Python 3
