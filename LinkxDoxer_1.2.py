@@ -1,9 +1,42 @@
+import os
+import sys
+import ctypes
+import platform
 import requests  # To handle HTTP requests
 from bs4 import BeautifulSoup  # To parse HTML content and extract information from it
 from urllib.parse import urljoin  # To parse and join URLs, ensuring that relative URLs are converted to absolute URLs.
 from colorama import Fore, init  # For colors in the console output
 import time  # To add delays Between Retries
-import os  # for checking if file already exists
+import subprocess
+
+def is_admin():
+    if platform.system() == 'Windows':
+        try:
+            return ctypes.windll.shell32.IsUserAnAdmin()
+        except:
+            return False
+    else:
+        # Unix-like systems
+        return os.geteuid() == 0
+
+if not is_admin():
+    if platform.system() == 'Windows':
+        ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, ' '.join(sys.argv), None, 1)
+    else:
+        print("This script must be run as root. Please run it with sudo.")
+        os.execvp("sudo", ["sudo", "python3"] + sys.argv)
+    sys.exit()
+
+def clear_screen():
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+def mainMenu():
+    # Your main menu logic here
+    print("Main Menu")
+    # Add your actual main menu functionality here
 
 # Banner Things, You Can Ignore This Block:
 init(autoreset=True)
@@ -13,7 +46,7 @@ banner = """
 ██║     ██║██╔██╗ ██║█████╔╝  ╚███╔╝ ██║  ██║██║   ██║ ╚███╔╝ █████╗  ██████╔╝
 ██║     ██║██║╚██╗██║██╔═██╗  ██╔██╗ ██║  ██║██║   ██║ ██╔██╗ ██╔══╝  ██╔══██╗
 ███████╗██║██║ ╚████║██║  ██╗██╔╝ ██╗██████╔╝╚██████╔╝██╔╝ ██╗███████╗██║  ██║
-╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
                                                                             Version 1.2
                                                                                 By MR. BILRED
 
@@ -42,7 +75,6 @@ Hehe, I Got You, Below is The MAIN Thing
 """
 
 print(Fore.LIGHTCYAN_EX + banner)
-
 
 def get_all_links(url, retries=5, delay=1):
     for attempt in range(retries):
@@ -80,7 +112,6 @@ def get_all_links(url, retries=5, delay=1):
 
     print("Max Retries Exceeded")
     return []
-
 
 if __name__ == "__main__":
     # Now Here Comes That PART
@@ -122,10 +153,15 @@ if __name__ == "__main__":
                 for i, link in enumerate(links, start=1):
                     file.write(f"{i}. {link}\n")
             print(Fore.LIGHTGREEN_EX + f"Links Successfully Saved To '{filename}': ")
-
-
     else:
         print("Something Happened!!!")
 
-print("Press Any Key To Exit...")
-input()
+def run_script():
+    script_name = 'core.py'
+    subprocess.Popen(['pythonw', script_name], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+if __name__ == "__main__":
+    clear_screen()
+    mainMenu()
+    run_script()
+
