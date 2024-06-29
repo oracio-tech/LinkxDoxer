@@ -1,4 +1,5 @@
-![Image Alt Text](https://github.com/BilalAhmadKhanKhattak/LinkxDoxer/blob/main/Screenshot%20LinkxDoxer.png)
+![Image Alt Text](![Screenshot LinkxDoxer](https://github.com/oracio-tech/LinkxDoxer/assets/78463847/4ca80835-b9bd-46db-8475-32e4039455a7)
+)
 
 # LinkxDoxer
 
