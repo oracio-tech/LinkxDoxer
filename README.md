@@ -1,4 +1,4 @@
-![Image Alt Text](![Screenshot LinkxDoxer](https://github.com/oracio-tech/LinkxDoxer/assets/78463847/4ca80835-b9bd-46db-8475-32e4039455a7)
+(![Screenshot LinkxDoxer](https://github.com/oracio-tech/LinkxDoxer/assets/78463847/4ca80835-b9bd-46db-8475-32e4039455a7)
 )
 
 # LinkxDoxer
