@@ -48,7 +48,7 @@ banner = """
 ███████╗██║██║ ╚████║██║  ██╗██╔╝ ██╗██████╔╝╚██████╔╝██╔╝ ██╗███████╗██║  ██║
 ╚══════╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
                                                                             Version 1.2
-                                                                                By MR. BILRED
+                                                                                By MR. Oracio-Tech
 
 
 Welcome to the LinkxDoxer! This script efficiently retrieves 
@@ -58,9 +58,6 @@ seeking to analyze links under a webpage and uncover valuable information (EXPEC
 
 Disclaimer = If You Do Any Malicious Activity, You, Yourself Are Responsible For It
 
-Author = Bilal Ahmad Khan aka BILRED
-Github = www.github.com/BilalAhmadKhanKhattak
-Youtube = www.youtube.com/c/techambition [Maybe Not That Active Right Now]
 
 Social media:
 Facebook = Where people brag about their breakfast photos!
